@@ -1,0 +1,60 @@
+<div class="container-fluid">
+
+    <div class="row container-fluid p-3">
+        <div class="text-center">
+            <h1>Desarrollo del Parcial2024</h1>
+            <button class="btn btn-primary" (click)="getRecetas()">ver recetas</button>
+        </div>
+    </div>
+    <div class="row container-fluid">
+        <div class="col-sm-3"></div>
+        <div class="col">
+        </div>
+        <div class="col-12 p-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">path</th>
+                        <th scope="col">titulo</th>
+                        <th scope="col">imagen</th>
+                        <th scope="col">accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let aux of resp">
+                        <td>{{aux.path}}</td>
+                        <td>{{aux.title}}</td>
+                        <td><img [src]="aux.image" alt="fotoReceta"></td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"  (click)="getDetalles(aux.path)">
+                                ver receta
+                            </button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Ingredientes</h3>
+                    <p *ngFor="let Ingrediente of ingredientes">{{Ingrediente}}</p>
+                    <h3>Pasos de preparacion</h3>
+                    <p *ngFor="let paso of pasos">{{paso}}</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

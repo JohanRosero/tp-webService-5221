@@ -1,0 +1,43 @@
+<div class="container fondo">
+
+    <div class="row p-5">
+        <h2>Home del tp Servicios web</h2>
+        <h4>desarrolllo del parcial practico aqui</h4>
+    </div>
+
+
+    <div class="row p-3 container">
+        <div class="col-sm-3"></div>
+        <div class="col">
+
+            <div class="col">
+                <div class="container card p-3">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">ip buscada</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="ipBuscada"
+                                name="ipBuscada">
+                        </div>
+                        <button type="button" class="btn btn-primary" (click)="getInfo()">enviar</button>
+                    </form>
+                </div>
+
+            </div> 
+            <div class="col-12 p-5">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">INFORMACION IP</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Pais:{{resp.country}}</h6>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Ciudad:{{resp.city}}</h6>
+                        <h5 class="card-title">UBICACIÓN</h5>
+                        <p class="card-text">Fecha del Lugar :{{resp.timezone.date}}</p>
+                        <p class="card-text">Zona Horaria : {{resp.timezone.name}}: {{resp.timezone.offset}}</p>
+                        <p class="card-text"></p>
+                        <a [href]="link" class="card-link" target="_blank">Ir al lugar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>

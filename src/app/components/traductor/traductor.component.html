@@ -1,0 +1,70 @@
+<div class="container-fluid traductor ">
+    <div class=" position-relative">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" *ngFor="let p of banderas">
+                    <img [src]="p" alt="" width="50" height="40">
+                </a>
+            </div>
+        </nav>
+        <div class="row position-absolute start-50 top-50 translate-middle col-11 ">
+            <div class="col-sm-8">
+                <div class="container p-3">
+                    <div class="card">
+                        <div class="row p-2">
+                            <div class="col-sm-5">
+                                <select class="form-select" aria-label="Default" [(ngModel)]="idiomaOrigen">
+                                    <option value="default" [selected]="idiomaOrigen==='default'" disabled>idioma origen
+                                    </option>
+                                    <option *ngFor="let op of idiomas" [value]="op[0]">{{op[1]}}</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2 container-fluid"><button type="button" class="btn btn-outline-info"
+                                    (click)="traducir()">Traducir</button></div>
+                            <div class="col-sm-5">
+                                <select class="form-select" aria-label="Default" [(ngModel)]="idiomaDestino">
+                                    <option value="default" [selected]="idiomaOrigen==='default'" id="idiomaDestino"
+                                        disabled>idioma destino
+                                    </option>
+                                    <option *ngFor="let os of seleccionables" [value]="os[0]">{{os[1]}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h5 class="card-header bg-dark text-white">Ingresa tu texto acá</h5>
+                        <div class="card-body">
+                            <div class="form pb-3">
+                                <div class="form">
+                                    <textarea class="form-control textBox" placeholder="... escribí acá"
+                                        [(ngModel)]="texto" id="texto" (change)="agregarTextos(texto)"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="card-header bg-dark text-white">Mira acá tu texto <strong>Traducido</strong></h5>
+                        <div class="card-body">
+                            <div class="form">
+                                <textarea class="form-control textBox" placeholder="... traducción" disabled
+                                    id="traduccion">{{traducido}}</textarea>
+                            </div>
+                            <!-- <button type="button"  class="btn btn-secondary" (click)="getAudio()">play</button> -->
+                            <audio [src]="audioUrl" controls>                
+                            </audio>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 p-3">
+                <div class="col card">
+                    <div class="card-body scrollable">
+                        <h5 class="card-title ">Recientes</h5>
+                        <div *ngFor="let t of traducciones" class="card-header recientes">
+                            <p class="p-0 m-0"> <Strong>{{t.idiomaOrigen}}:</Strong>{{t.texto}}</p>
+                            <p class="p-0 m-0"> <Strong>{{t.idiomaDestino}}:</Strong>{{t.traduccion}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

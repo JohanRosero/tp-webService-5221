@@ -1,0 +1,46 @@
+<div class="container-fluid principal">
+    <div class="col-9 p-3">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" type="button" >Argentina</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Del Mundo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Deportes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Entretenimiento</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-12">
+            <div class="row row-cols-1 row-cols-md-2 g-2" >
+                <div class="col-md-4 col-sm-6 col p-2" *ngFor="let noticia of resp.items">
+                    <div class="card">
+                        <img [src]="noticia.images?.thumbnail" class="card-img-top artista" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title fs-10">{{noticia.title}}</h5>
+                            <p class="card-text">{{noticia.publisher}}</p>
+                            <strong>{{noticia.timestamp|date}}</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-12 border2">
+            <div class="container-fluid">
+                <div class="col">
+                    <img src="../../../assets/images/publicidad.jpg" class="img-fluid" alt="...">
+                </div>
+                <div class="col">
+                    <img src="../../../assets/images/publicidad1.jpg" class="img-fluid" alt="...">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

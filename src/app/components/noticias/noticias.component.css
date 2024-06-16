@@ -1,0 +1,8 @@
+.card {
+    height: 35vh;
+}
+
+.card-body p{
+    color: brown;
+    font-weight: bold;
+}

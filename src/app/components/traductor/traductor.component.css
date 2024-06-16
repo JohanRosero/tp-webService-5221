@@ -1,0 +1,23 @@
+.traductor {
+    height: 100%;
+    background: -webkit-linear-gradient(202deg, #d5d5d5, #a9aec7, #cfd8dc, #caf9ff);    
+}
+
+.textBox {
+    font-style: italic;
+    font-weight: 100;
+    height: 20vh;
+}
+
+.recientes {
+    background-color: rgb(246, 246, 246);
+    font-size: 15px;
+    font-style: oblique;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+    color: rgb(121, 120, 120);
+}
+div.scrollable {
+    overflow: auto; /* Habilita el desplazamiento si es necesario */
+    height: 75vh;  /* Altura del div */
+  }
+  

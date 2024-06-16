@@ -1,0 +1,10 @@
+.fondo {
+    background: -webkit-linear-gradient(202deg, #d5d5d5, #a9aec7, #cfd8dc, #caf9ff);    
+}
+.card{
+    height: 35vh;
+}
+.card img{
+    width: auto;
+    height: 20vh;
+}

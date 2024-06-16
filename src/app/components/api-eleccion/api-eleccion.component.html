@@ -1,0 +1,23 @@
+<div class="container fondo"> 
+
+    <div class="row container p-3">
+        <div class="row">
+            <h2>Mira los servicios disponibles de Streaming disponibles en Argentina</h2>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row row-cols-1 row-cols-md-2 g-2 p-3">
+                    <div class="col-md-4 col-sm-6 col p-2" *ngFor="let resp of resp2.services">
+                        <div class="card">
+                            <img [src]="resp.imageSet.lightThemeImage" class="card-img-top artista" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title fs-10">{{resp.name}}</h5>
+                               <a [href]="resp.homePage" target="_blank"><strong>Visitar</strong></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
